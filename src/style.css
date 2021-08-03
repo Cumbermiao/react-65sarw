@@ -1,3 +1,17 @@
-h1, p {
+@import '~saltui/build/salt-ui.css';
+
+html {
+  font-size: 4px;
+}
+h1,
+p {
   font-family: Lato;
+}
+
+.overflow-auto {
+  overflow: auto;
+}
+
+.p-8 {
+  padding: 8rem;
 }
