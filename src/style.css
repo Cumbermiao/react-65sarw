@@ -1,7 +1,15 @@
 @import '~saltui/build/salt-ui.css';
-
-html {
-  font-size: 4px;
+:root {
+  --rem: 70; /* dpr 2*/
+  --rem-16: calc((16 / var(--rem)) * 1rem);
+  --rem-24: calc((24 / var(--rem)) * 1rem);
+  --rem-32: calc((32 / var(--rem)) * 1rem);
+  --rem-34: calc((34 / var(--rem)) * 1rem);
+  --color-font--normal: #202020;
+  --color-font--light: #ababab;
+}
+body {
+  color: var(--color-font--normal);
 }
 h1,
 p {
@@ -10,8 +18,4 @@ p {
 
 .overflow-auto {
   overflow: auto;
-}
-
-.p-8 {
-  padding: 8rem;
 }

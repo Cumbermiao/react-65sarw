@@ -3,9 +3,14 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
+    "autoprefixer": "^10.0.2",
+    "postcss": "^8.0.9",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "saltui": "^4.12.0"
+    "react-router-dom": "^5.2.0",
+    "salt-icon": "^3.8.0",
+    "saltui": "^4.12.0",
+    "tailwindcss": "^2.2.7"
   },
   "scripts": {
     "start": "react-scripts start",

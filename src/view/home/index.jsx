@@ -1,9 +1,25 @@
 import React, { useState } from 'react';
 import { SearchBar, Tab, ScrollList, InfiniteScroll } from 'saltui';
-import './index.css';
+import IconRight from 'salt-icon/lib/DirectionRight';
+import './index.scss';
 
 function Card(props) {
-  return <div />;
+  const { data } = props;
+  return (
+    <div className="list-item">
+      <div className="item-header">
+        <big>{data.title}</big>
+        <i>{data.code}</i>
+      </div>
+      <div className="item-body">
+        <div className="content">
+          <p>业务系统：{data.createPersonName}</p>
+          <p>创建时间：{data.createTime}</p>
+        </div>
+        <IconRight fill="#ababab" width="0.34rem" height="0.34rem" />
+      </div>
+    </div>
+  );
 }
 
 export default function Home(props) {
@@ -31,7 +47,7 @@ export default function Home(props) {
     reviewId: null,
     reviewName: null,
     state: '5',
-    title: '故障报修',
+    title: '故障报修故障报修故障报修故障报修故障报修故障报修故障报修',
     todoPersonId: '',
     type: 1
   };
@@ -62,34 +78,40 @@ export default function Home(props) {
     });
     setList(list.slice(0));
   };
+
+  const onSearch = params => {
+    console.log('onSearch', params);
+  };
+
+  const onChange = params => {
+    console.log('onChange', params);
+  };
+
+  const onEnter = params => {
+    console.log('onEnter', params);
+  };
+
+  const onExit = params => {
+    console.log('onExit', params);
+  };
+
   return (
-    <div class="home">
-      <SearchBar />
+    <div className="page-home">
+      <SearchBar
+        placeholder="事件搜索"
+        {...{ onSearch, onChange, onEnter, onExit, searchDelay: 500 }}
+      />
       <Tab activeKey={'all'}>
         {tabList.map(item => (
           <Tab.Item title={item.label} key={item.value} />
         ))}
       </Tab>
-      {list.length}
-      {/* <ScrollList data={list} onLoad={onLoad} dataGetted={true}>
-        {(data, idx) => {
-          return (
-            <ScrollList.Item key={idx}>
-              <Card>
-                <div>{data.title}</div>
-              </Card>
-            </ScrollList.Item>
-          );
-        }}
-      </ScrollList> */}
 
       <InfiniteScroll loading={false} onLoad={onLoad}>
-        <div class="overflow-auto h-500px">
+        <div class="list-container">
           <div>
             {list.map(data => (
-              <div class="p-8">
-                <div>{data.title}</div>
-              </div>
+              <Card data={data} />
             ))}
           </div>
         </div>

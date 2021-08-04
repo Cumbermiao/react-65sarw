@@ -1,0 +1,10 @@
+@mixin ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@function rem($num) {
+  $res: calc((#{$num} / var(--rem)) * 1rem);
+  @return $res;
+}

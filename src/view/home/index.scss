@@ -1,0 +1,53 @@
+@import '../../style/_common.scss';
+
+.page-home {
+  .list-container {
+    overflow: auto;
+    height: calc(100vh - 120px);
+    padding: var(--rem-16) var(--rem-24);
+    background-color: var(--test, #f6f6f6);
+  }
+
+  .list-item {
+    padding: rem(32);
+    border-radius: 6px;
+    background-color: #fff;
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      big {
+        @include ellipsis();
+        width: calc((380 / var(--rem) * 1rem));
+        font-size: var(--rem-34);
+      }
+
+      i {
+        font-size: var(--rem-24);
+      }
+    }
+
+    .item-body {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: nowrap;
+      color: var(--color-font--light);
+
+      .content p {
+        @include ellipsis();
+      }
+      .content p:first-child {
+        margin-top: rem(28);
+        margin-bottom: rem(14);
+        font-size: rem(28);
+      }
+    }
+  }
+
+  .list-item + .list-item {
+    margin-top: var(--rem-16);
+  }
+}
