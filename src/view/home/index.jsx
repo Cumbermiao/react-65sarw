@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { SearchBar, Tab, ScrollList, InfiniteScroll } from 'saltui';
 import IconRight from 'salt-icon/lib/DirectionRight';
 import './index.scss';
@@ -52,6 +53,7 @@ export default function Home(props) {
     type: 1
   };
   const [list, setList] = useState([order]);
+  const history = useHistory();
 
   const onLoad = () => {
     console.log('onload');
@@ -98,10 +100,12 @@ export default function Home(props) {
   return (
     <div className="page-home">
       <SearchBar
+        className="searchbar"
         placeholder="事件搜索"
         {...{ onSearch, onChange, onEnter, onExit, searchDelay: 500 }}
+        style={{ borderBottom: 'none' }}
       />
-      <Tab activeKey={'all'}>
+      <Tab className="home-tab" activeKey={'all'}>
         {tabList.map(item => (
           <Tab.Item title={item.label} key={item.value} />
         ))}
@@ -116,6 +120,10 @@ export default function Home(props) {
           </div>
         </div>
       </InfiniteScroll>
+
+      <div className="add-btn" onClick={() => history.push('/order/create')}>
+        <i className="plus icon" />
+      </div>
     </div>
   );
 }

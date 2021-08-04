@@ -7,6 +7,7 @@
   --rem-34: calc((34 / var(--rem)) * 1rem);
   --color-font--normal: #202020;
   --color-font--light: #ababab;
+  --color-font--blue: #2779ff;
 }
 body {
   color: var(--color-font--normal);
