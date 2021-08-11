@@ -1,0 +1,115 @@
+/*
+      object-assign
+      (c) Sindre Sorhus
+      @license MIT
+      */
+
+/*
+object-assign
+(c) Sindre Sorhus
+@license MIT
+*/
+
+/*!
+      Copyright (c) 2017 Jed Watson.
+      Licensed under the MIT License (MIT), see
+      http://jedwatson.github.io/classnames
+      */
+
+/*!
+      Copyright (c) 2018 Jed Watson.
+      Licensed under the MIT License (MIT), see
+      http://jedwatson.github.io/classnames
+      */
+
+/*!
+  Copyright (c) 2017 Jed Watson.
+  Licensed under the MIT License (MIT), see
+  http://jedwatson.github.io/classnames
+*/
+
+/*! Hammer.JS - v2.0.7 - 2016-04-22
+      * http://hammerjs.github.io/
+      *
+      * Copyright (c) 2016 Jorik Tangelder;
+      * Licensed under the MIT license */
+
+/*! iScroll v5.1.3 ~ (c) 2008-2014 Matteo Spinelli ~ http://cubiq.org/license */
+
+/*! natty-fetch.js v2.6.0 | MIT License | fushan | https://github.com/jias/natty-fetch */
+
+/*! natty-storage.js v2.3.0 | MIT License | fushan | https://github.com/jias/natty-storage */
+
+/*! svg4everybody v2.1.9 | github.com/jonathantneal/svg4everybody */
+
+/**
+        * @license
+        * Lodash <https://lodash.com/>
+        * Copyright OpenJS Foundation and other contributors <https://openjsf.org/>
+        * Released under MIT license <https://lodash.com/license>
+        * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
+        * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+        */
+
+/** @license React v0.20.2
+ * scheduler.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/** @license React v16.13.1
+        * react-is.development.js
+        *
+        * Copyright (c) Facebook, Inc. and its affiliates.
+        *
+        * This source code is licensed under the MIT license found in the
+        * LICENSE file in the root directory of this source tree.
+        */
+
+/** @license React v16.13.1
+       * react-is.production.min.js
+       *
+       * Copyright (c) Facebook, Inc. and its affiliates.
+       *
+       * This source code is licensed under the MIT license found in the
+       * LICENSE file in the root directory of this source tree.
+       */
+
+/** @license React v16.13.1
+ * react-is.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/** @license React v17.0.2
+ * react-dom.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/** @license React v17.0.2
+ * react-jsx-runtime.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/** @license React v17.0.2
+ * react.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */

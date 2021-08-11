@@ -1,4 +1,4 @@
-@import '~saltui/build/salt-ui.css';
+@import '~saltui/build/dd.css';
 :root {
   --rem: 70; /* dpr 2*/
   --rem-16: calc((16 / var(--rem)) * 1rem);
@@ -8,10 +8,14 @@
   --color-font--normal: #202020;
   --color-font--light: #ababab;
   --color-font--blue: #2779ff;
+  --color-font--blue-disabled: #C6E2FE;
+  --color-bg--white: #fff;
+  --color-bg--body: #f6f6f6;
+  --color-bd--normal: #E3E4E4;
 }
 body {
   color: var(--color-font--normal);
-  background-color: #f6f6f6;
+  background-color: var(--color-bg--body);
 }
 h1,
 p {

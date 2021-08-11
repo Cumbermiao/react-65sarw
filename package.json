@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "autoprefixer": "^10.0.2",
+    "axios": "^0.21.1",
     "postcss": "^8.0.9",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
@@ -20,6 +21,22 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "react-scripts": "latest"
+    "dingtalk-jsapi": "^2.13.50",
+    "js-cookie": "^3.0.0",
+    "node-sass": "^6.0.1",
+    "react-scripts": "latest",
+    "vconsole": "^3.9.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

@@ -1,0 +1,20 @@
+@import '../../../style/_common';
+
+.detail-form {
+    height: calc(100vh - 42px);
+    overflow: auto;
+    padding: rem(32) rem(24) (remPlus(64, 44px));
+}
+
+.submit-btn {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: rem(16) rem(24);
+    border-top: 1px solid var(--color-bd--normal);
+    background-color: var(--color-bg--white);
+    .t-button {
+        margin: 0;
+    }
+}

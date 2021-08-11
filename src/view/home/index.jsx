@@ -1,13 +1,19 @@
-import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
-import { SearchBar, Tab, ScrollList, InfiniteScroll } from 'saltui';
-import IconRight from 'salt-icon/lib/DirectionRight';
-import './index.scss';
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
+import { SearchBar, Tab, ScrollList, InfiniteScroll } from "saltui";
+import IconRight from "salt-icon/lib/DirectionRight";
+import { getOrderList } from "../../api/base";
+import "./index.scss";
 
 function Card(props) {
+  const history = useHistory();
   const { data } = props;
+
+  const toDetail = () => {
+    history.push(`/order/detail?id=${data.id}`);
+  };
   return (
-    <div className="list-item">
+    <div className="list-item" onClick={toDetail}>
       <div className="item-header">
         <big>{data.title}</big>
         <i>{data.code}</i>
@@ -24,89 +30,78 @@ function Card(props) {
 }
 
 export default function Home(props) {
+  const [list, setList] = useState([order]);
+  const [pageNum, setPageNum] = useState(1);
+  const [type, setType] = useState("");
+  const [keyword, setKeyword] = useState("");
+  const history = useHistory();
+
   const tabList = [
-    { label: '全部', value: 'all' },
-    { label: '今天', value: '1' },
-    { label: '昨天', value: '2' },
-    { label: '近7天', value: '3' }
+    { label: "全部", value: "" },
+    { label: "今天", value: "1" },
+    { label: "昨天", value: "2" },
+    { label: "近7天", value: "3" },
   ];
 
   const order = {
-    autoFlag: 0,
-    code: 'IN20210011',
-    createPersonId: 1,
-    createPersonName: '系统管理员',
-    createTime: '2021-06-11 10:59:01',
-    designateId: 30,
-    designateName: '',
-    estimateId: null,
-    estimateName: null,
-    finishTime: '2021-06-11 11:16:49',
-    handlePersonName: '系统管理员',
-    haveRemoved: '0',
+    code: "IN20210011",
+    createPersonName: "系统管理员",
+    createTime: "2021-06-11 10:59:01",
     id: 1756,
-    reviewId: null,
-    reviewName: null,
-    state: '5',
-    title: '故障报修故障报修故障报修故障报修故障报修故障报修故障报修',
-    todoPersonId: '',
-    type: 1
+    state: "5",
+    title: "故障报修故障报修故障报修故障报修故障报修故障报修故障报修",
+    systemName: "OA系统",
   };
-  const [list, setList] = useState([order]);
-  const history = useHistory();
+
+  const getList = () => {
+    getOrderList({ pageNum, type, keyword })
+      .then(({ data }) => {
+        list.concat(data);
+        setList(list);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   const onLoad = () => {
-    console.log('onload');
-    list.push({
-      autoFlag: 0,
-      code: 'IN20210011',
-      createPersonId: 1,
-      createPersonName: '系统管理员',
-      createTime: '2021-06-11 10:59:01',
-      designateId: 30,
-      designateName: '',
-      estimateId: null,
-      estimateName: null,
-      finishTime: '2021-06-11 11:16:49',
-      handlePersonName: '系统管理员',
-      haveRemoved: '0',
-      id: 1756,
-      reviewId: null,
-      reviewName: null,
-      state: '5',
-      title: '故障报修',
-      todoPersonId: '',
-      type: 1
-    });
-    setList(list.slice(0));
+    pageNum++;
+    setPageNum(pageNum);
+    getList();
   };
 
-  const onSearch = params => {
-    console.log('onSearch', params);
+  const onSearch = (keyword) => {
+    console.log("onSearch", keyword);
+    setKeyword(keyword);
+    getList();
   };
 
-  const onChange = params => {
-    console.log('onChange', params);
+  const onChange = (params) => {
+    console.log("onChange", params);
   };
 
-  const onEnter = params => {
-    console.log('onEnter', params);
+  const onEnter = (params) => {
+    console.log("onEnter", params);
   };
 
-  const onExit = params => {
-    console.log('onExit', params);
+  const onExit = (params) => {
+    console.log("onExit", params);
+    setKeyword("");
+    getList();
   };
 
   return (
+    //TODO: instantSearch=false 仍然触发 onSearch
     <div className="page-home">
       <SearchBar
         className="searchbar"
         placeholder="事件搜索"
-        {...{ onSearch, onChange, onEnter, onExit, searchDelay: 500 }}
-        style={{ borderBottom: 'none' }}
+        instantSearch={false}
+        {...{ onSearch, onChange, onEnter, onExit }}
+        style={{ borderBottom: "none" }}
       />
-      <Tab className="home-tab" activeKey={'all'}>
-        {tabList.map(item => (
+      <Tab className="home-tab" activeKey={tab}>
+        {tabList.map((item) => (
           <Tab.Item title={item.label} key={item.value} />
         ))}
       </Tab>
@@ -114,14 +109,14 @@ export default function Home(props) {
       <InfiniteScroll loading={false} onLoad={onLoad}>
         <div class="list-container">
           <div>
-            {list.map(data => (
-              <Card data={data} />
+            {list.map((data, idx) => (
+              <Card key={idx} data={data} />
             ))}
           </div>
         </div>
       </InfiniteScroll>
 
-      <div className="add-btn" onClick={() => history.push('/order/create')}>
+      <div className="add-btn" onClick={() => history.push("/order/create")}>
         <i className="plus icon" />
       </div>
     </div>

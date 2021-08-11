@@ -1,0 +1,17 @@
+@import '../../../style/_common';
+
+.page-create-order {
+    .submit-btn {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: rem(16) rem(24);
+        background-color: var(--color-bg--white);
+
+        .t-button-primary {
+            font-size: rem(34);
+            // background-color: var(--color-font--blue-disabled);
+        }
+    }
+}

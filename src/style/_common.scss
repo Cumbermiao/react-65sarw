@@ -8,3 +8,7 @@
   $res: calc((#{$num} / var(--rem)) * 1rem);
   @return $res;
 }
+
+@function remPlus($num, $addend){
+  @return calc((#{$num} / var(--rem)) * 1rem + #{$addend})
+}
